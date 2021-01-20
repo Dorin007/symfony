@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -45,6 +46,7 @@ class Category
         $this->jobs = new ArrayCollection();
         $this->affiliates = new ArrayCollection();
     }
+
     /**
      * @return int
      */

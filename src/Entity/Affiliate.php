@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -67,6 +68,7 @@ class Affiliate
     {
         $this->categories = new ArrayCollection();
     }
+
     /**
      * @return int
      */
