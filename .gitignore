@@ -1,9 +1,5 @@
-
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
+.env
 /public/bundles/
 /var/
 /vendor/
@@ -11,10 +7,11 @@
 
 ###> symfony/phpunit-bridge ###
 .phpunit
-.phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
+
+.idea
