@@ -29,3 +29,4 @@ services:
 
     App\Service\MessageGenerator:
         public: true
+        arguments: [@security.context, @logger]
