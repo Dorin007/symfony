@@ -19,6 +19,5 @@ class Rot13Transformer
     public function transform($value): string
     {
         $this->logger->info('Transforming '.$value);
-        // ...
     }
 }
