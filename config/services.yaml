@@ -31,3 +31,7 @@ services:
         alias: App\Service\MessageGenerator
         public: true
         arguments: [@security.context, @logger]
+
+    App\Util\Rot13Transformer: ~
+
+    App\Util\TransformerInterface: '@App\Util\Rot13Transformer'
