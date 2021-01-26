@@ -5,6 +5,7 @@ use App\Entity\Job;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * @Route("/prefix")
@@ -20,6 +21,7 @@ class JobController extends AbstractController
      */
     public function list() : Response
     {
+        $jobShow = $this->generateUrl('job.show');
         $jobs = $this->getDoctrine()->getRepository(Job::class)->findAll();
 
         return $this->render('job/list.html.twig', [
