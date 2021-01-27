@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %} - Job Layout</title>
+    {% endblock %}
+</head>
+<body>
+<div id="header">
+    {% block headr %}
+        This is header.
+    {% endblock %}
+</div>
+{% block sidebar %}
+    <h3>Sidebar Content</h3>
+    {{ parent() }}
+{% endblock %}
+<div id="content">{% block content %}{% endblock %}</div>
+<div id="footer">
+    {% block footer %}
+        &copy; Copyright 2011 by <a href="http://domain.invalid/">you</a>.
+    {% endblock %}
+</div>
+</body>
+</html>

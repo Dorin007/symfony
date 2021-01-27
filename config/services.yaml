@@ -28,10 +28,10 @@ services:
     # please note that last definitions always *replace* previous ones
 
     app.mailer:
-        alias: App\Service\MessageGenerator
-        public: true
-        arguments: [@security.context, @logger]
-
+        class: App\Service\MessageGenerator
+        arguments:
+            $locale: '%locale%'
+    App\Service\MessageGenerator: '@app.mailer'
     App\Util\Rot13Transformer: ~
 
     App\Util\TransformerInterface: '@App\Util\Rot13Transformer'

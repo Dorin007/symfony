@@ -8,10 +8,16 @@ class MessageGenerator
 {
     private $logger;
     private $loggerAwareInterface;
+    private $locale;
 
-    public function __construct(LoggerAwareInterface $loggerAwareInterface, LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger, string $locale)
     {
-        $this->loggerAwareInterface = $loggerAwareInterface;
         $this->logger = $logger;
+        $this->locale = $locale;
+    }
+
+    public function print()
+    {
+        die($this->locale);
     }
 }

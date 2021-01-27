@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Job;
+use App\Service\MessageGenerator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,16 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 class JobController extends AbstractController
 {
     /**
+     * @var MessageGenerator
+     */
+    private $messageGenerator;
+
+    public function __construct(MessageGenerator $messageGenerator)
+    {
+
+        $this->messageGenerator = $messageGenerator;
+    }
+    /**
      * Lists all job entities.
      *
      * @Route("/", name="job.list", methods="GET")
@@ -21,6 +32,7 @@ class JobController extends AbstractController
      */
     public function list() : Response
     {
+        $this->messageGenerator->print();
         $jobShow = $this->generateUrl('job.show');
         $jobs = $this->getDoctrine()->getRepository(Job::class)->findAll();
 
