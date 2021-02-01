@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
- * @Route("/prefix")
+ * @Route("/jobs")
  */
 class JobController extends AbstractController
 {
@@ -20,20 +20,19 @@ class JobController extends AbstractController
 
     public function __construct(MessageGenerator $messageGenerator)
     {
-
         $this->messageGenerator = $messageGenerator;
     }
     /**
      * Lists all job entities.
      *
-     * @Route("/", name="job.list", methods="GET")
+     * @Route("/list", name="job.list", methods="GET")
      *
      * @return Response
      */
     public function list() : Response
     {
-        $this->messageGenerator->print();
-        $jobShow = $this->generateUrl('job.show');
+//        $this->messageGenerator->print();
+//        $jobShow = $this->generateUrl('job.show');
         $jobs = $this->getDoctrine()->getRepository(Job::class)->findAll();
 
         return $this->render('job/list.html.twig', [
