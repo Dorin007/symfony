@@ -6,6 +6,23 @@ class Task
     protected $task;
     protected $dueDate;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $brochureFilename;
+
+    public function getBrochureFilename()
+    {
+        return $this->brochureFilename;
+    }
+
+    public function setBrochureFilename($brochureFilename)
+    {
+        $this->brochureFilename = $brochureFilename;
+
+        return $this;
+    }
+
     public function getTask(): ?string
     {
         return $this->task;
